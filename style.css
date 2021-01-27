@@ -81,8 +81,7 @@ body{
     color: gray;
     display: block;
     font-size: 14px;
-    border-radius: 5px;
-    text-transform: capitalize;
+    border-radius: 5px; 
     border: 2px solid #f0f0f0;
 }
 #form .form-control input:focus{

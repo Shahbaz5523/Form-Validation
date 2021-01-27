@@ -15,16 +15,56 @@ const validate = ()=>{
     const passwordValue = password.value.trim();
     const cpasswordValue = cpassword.value.trim();
     
+    
+    const setErrorMessage = (input,error)=>{
+        let formControl = input.parentElement; 
+        let small = formControl.querySelector('small');
+        small.innerText = error;
+        formControl.className = 'form-control error';
+    }
+
+    const setSuccessMessage = (input)=>{
+        let formControl = input.parentElement; 
+        formControl.className = 'form-control success';
+    }
+
+    const isEmail = (email)=>{
+        return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    }
+
     // validate username
     if(usernameValue === ""){
         setErrorMessage(username,"Username cannot be blank")
     }else if(usernameValue.length<=2){
-        setErrorMessage(username,"Username lenght must b grater then 2 characters")
+        setErrorMessage(username,"Username min 3 char")
     }else{
         setSuccessMessage(username);
     }
+    
+    // validate email
+    if(emailValue === ""){
+        setErrorMessage(email,"Email cannot be blank")
+    }else if(!isEmail(emailValue)){
+        setErrorMessage(email,"Email not Valid")
+    }else{
+        setSuccessMessage(email);
+    }
 
-    const setErrorMessage = (input,error)=>{
-        form.querySelector('form-control').classList.add('error');
+    // validate password
+    if(passwordValue === ""){
+        setErrorMessage(password,"Password cannot be blank")
+    }else if(passwordValue.length<=5){
+        setErrorMessage(password,"Password length is not >= 6")
+    }else{
+        setSuccessMessage(password);
+    }
+
+    // validate cpassword
+    if(cpasswordValue === ""){
+        setErrorMessage(cpassword,"Password cannot be blank")
+    }else if(passwordValue !== cpasswordValue){
+        setErrorMessage(cpassword,"Password Not Match")
+    }else{
+        setSuccessMessage(cpassword);
     }
 }
