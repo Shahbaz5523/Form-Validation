@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontawosome icon library -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  </head>
+  <body>
+    <!-- main container with width of 100vw and height of 100vh -->
+    <div class="container">
+      <!-- Actual form used for validation -->
+      <form id="form">
+        <!-- form header that contain title -->
+        <div class="header">
+            <img src="nd2m6os0tmc9env4gc8jh3er0j.png" width="50px" alt="">
+          <h1>Registration Form</h1>
+        </div>
+        <!-- form body that contain input fileds -->
+        <div class="formBody">
+          <!-- Name -->
+          <div class="form-control">
+            <label for="username">Username</label>
+            <input type="text" id="username" autocomplete="false" placeholder="type username here" />
+            <i id="circle" class="fas fa-check-circle"></i>
+            <i id="exclamation"  class="fas fa-exclamation-circle"></i>
+            <small>some error</small>
+          </div>
+          <!-- Email -->
+          <div class="form-control">
+            <label for="email">Email</label>
+            <input type="email" id="email" autocomplete="false" placeholder="type email here" />
+            <i id="circle" class="fas fa-check-circle"></i>
+            <i id="exclamation" class="fas fa-exclamation-circle"></i>
+            <small>some error</small>
+          </div>
+          <!-- Password -->
+          <div class="form-control">
+            <label for="password">Password</label>
+            <input type="password" id="password" autocomplete="false" placeholder="type Password here" />
+            <i id="circle" class="fas fa-check-circle"></i>
+            <i id="exclamation" class="fas fa-exclamation-circle"></i>
+            <small>some error</small>
+          </div>
+          <!-- Confirm Password -->
+          <div class="form-control">
+            <label for="cpassword">Confirm Password</label>
+            <input type="password" id="cpassword" autocomplete="false" placeholder="Retype Password here" />
+            <i id="circle" class="fas fa-check-circle"></i>
+            <i id="exclamation" class="fas fa-exclamation-circle"></i>
+            <small>some error</small>
+          </div>
+          <!-- submit Button -->
+          <div class="form-control">
+              <input type="submit" id="submit" value="submit">
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
